@@ -84,7 +84,7 @@ void mexFunction(int nlhs, mxArray* plhs[], int nrhs, const mxArray* prhs[])
             mexErrMsgTxt(dlerror());
           }
         #endif
-        jl_init_with_image(home, image);
+        jl_init_with_image(strdup(home), strdup(image));
         mxFree(home);
         mxFree(image);
         mexAtExit(jl_atexit_hook_0);
